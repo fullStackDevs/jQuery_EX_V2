@@ -23,7 +23,7 @@
 
 		<script type="text/javascript">
 			$(document).ready(function(){
-				alert("DOM loaded");
+				$('#myDiv').html('New content');
 			});
 		</script>
 
@@ -37,7 +37,11 @@
 		<![endif]-->
 	</head>
 	<body>
-		<h1 class="text-center">Hello World</h1>
+		<h1 class="text-center"></h1>
+
+		<div id="myDiv">
+			My div tag content.
+		</div>
 
 		
 		<!-- Bootstrap JavaScript -->
