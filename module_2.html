@@ -8,8 +8,65 @@
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<style type="text/css">
+			.RedDiv {
+				/*background-color: red;*/
+			}
+
+			.BlueDiv {
+				/*background-color: blue;*/
+			}
+		</style>
 
 		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				//=============================================================================
+				//SELECTAREA NODURILOR DUPA TAG NAME
+				//=============================================================================
+
+				//Select div elements
+				// var divs = $("div");
+				// alert("Number of divs in the page: " + divs.length);
+
+				//Change the style of the selected elements
+				//$('div').css('background-color', 'Green'); 
+
+				//Parcurgerea elementelor selectate si efectuarea de operatiuni asupra lor
+				// $('div').each(function(){
+				// 	alert($(this).html());
+				// });
+
+				//SELECTARE ELEMENTE MULTIPLE IN ACELASI SELECT
+				// var elements = $('div, span');
+				// alert("No of found elements: " + elements.length);	
+
+				//SELECTEAZA ELEMENTELE DIV SI SPAN DIN PAGINA, ITEREAZA PRIN ELE SI LE MODIFICA STILURILE
+				//$('div, span').css('background-color', 'green');
+
+
+				//=============================================================================
+				//SELECTAREA NODURILOR DUPA ID
+				//=============================================================================
+
+				//SELECTEAZA ELEMENTUL DUPA ID SI AFISEAZA INTR-UN ALERT CONTINUTUL ACELUI ELEMENT
+				//alert($('#myForm').html());
+
+
+
+
+
+
+
+
+
+
+
+
+			});
+		</script>
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,7 +76,9 @@
 		<![endif]-->
 	</head>
 	<body>
-		
+		<div id="div_1">
+			My div_1 content
+		</div>
 		<table>
 			<tr>
 				<td>Cell row 1</td>
@@ -88,7 +147,7 @@
 
 		</div>
 
-
+	
 
 
 		<!-- Bootstrap JavaScript -->
