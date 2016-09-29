@@ -55,13 +55,22 @@
 				//SELECTEAZA ELEMENTUL DUPA ID SI AFISEAZA INTR-UN ALERT CONTINUTUL ACELUI ELEMENT
 				//alert($('#myForm').html());
 
+				//=============================================================================
+				//SELECTAREA NODURILOR DUPA CLASA
+				//=============================================================================
 
+				//SELECTEAZA ELEMENTE DUPA NUMELE CLASEI (PERFORMANTA SCAZUTA -- SCANEAZA TOT DOM-UL)
+				//$('.BlueDiv').css('border','2px solid green');
 
+				//SELECTEAZA ELEMENTELE CARE AU CEL PUTIN UNA DIN CLASELE MENTIONATE
+				//$('.BlueDiv, .RedDiv').css('border','2px solid green');
 
+				//SELECTEAZA ELEMENTELE CARE AU NUMELE ELEMENTULUI DAT CA PARAMETRU SI CARE AU CLASA DATA CA PARAMETRU
+				//$('div.RedDiv').css('border','2px solid green');
 
-
-
-
+				//SELECTEAZA ELEMENTELE <DIV> CARE AU UNA DIN CLASELE MENTIONATE
+				//ACEST SELECT ARE PERFORMANTA MAI BUNA DECAT CEL CARE MENTIONEAZA DOAR NUMELE CLASELOR DEOARECE SCANEAZA MAI PUTINE ELEMENTE
+				//$('div.RedDiv, div.BlueDiv').css('border', '2px solid green');
 
 
 
