@@ -72,6 +72,45 @@
 				//ACEST SELECT ARE PERFORMANTA MAI BUNA DECAT CEL CARE MENTIONEAZA DOAR NUMELE CLASELOR DEOARECE SCANEAZA MAI PUTINE ELEMENTE
 				//$('div.RedDiv, div.BlueDiv').css('border', '2px solid green');
 
+				//=============================================================================
+				//SELECTAREA NODURILOR DUPA VALOAREA ATRIBUTELOR
+				//=============================================================================
+				
+				//SELCTEAZA ELEMENTELE DIV CARE AU UN ATRIBUT TITLE
+				// var divs = $('div[title]');
+				// alert("Number of divs with a title attribute: " + divs.length);
+
+				//SELECTEAZA ELEMENTELE DIV CARE AU UN ATRIBUT title="RedDivTitle"
+				//ESTE CASE SENSITIVE (daca sriem in select "redDivTitle" nu va fi gasit nici un div cu acest titlu)
+				// var divs = $('div[title="RedDivTitle"]');
+				// alert("No of found divs: " + divs.length);
+
+				//SELECTEAZA ELEMENTELE INPUT DE TIP TEXT SI LE SCHIMBA CULOAREA DE BACKGROUND
+				// var inputs = $('input[type="text"]');	
+				// inputs.css('background-color', 'yellow');
+
+
+				//=============================================================================
+				//SELECTAREA NODURILOR DUPA INPUT
+				//=============================================================================
+
+				//SELECTEAZA TOATE ELEMENTELE CARE POT FI CLASIFICATE CA SI INPUT DIN PAGINA (input fields, text areas, selects, radio)
+				// var inputs = $(':input');
+				// alert("No of found input elements: " + inputs.length);
+				// inputs.css('background-color', 'yellow');
+
+
+				//DACA VREM SA FOLOSIM VALOAREA DIN ELEMENTELE OBTINUT PUTEM FOLOSI FUNCTIA "val()" 
+				//INSA ACEASTA FUNCTIE POATE FI APLICATA DOAR PE OBIECTE jQuery 
+				//DACA INCERCAM SA APLICAM FUNCTIA PE "inputs[1]"  (inputs[1].val()) NU VA FUNCTIONA DEOARECE "input[1]" este un element HTML NU UN OBIECT jQuery
+				//PENTRU A PUTE APLICA FUNCTIA "val()" pe un element din colectie TREBUIE SA INFASURAM ELEMENTUL RESPECTIV IN "$()" . ASTFEL VOM AVEA ACCES LA FUNCTIA "val()" DIN jQuery
+				// var inputs = $(':input');
+				// alert("The value of the first input is: " + $(inputs[0]).val());
+
+
+				
+
+
 
 
 
