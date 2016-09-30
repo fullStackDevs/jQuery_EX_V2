@@ -124,19 +124,41 @@
 				// });
 
 				
+				//SELECTEAZA ELEMENTELE DIV CARE CONTIN TEXTUL / VALOAREA DATA CA PARAMETRU ("content")
+				// var elements = $('div:contains("content")');
+				// elements.each(function(){
+				// 	alert($(this).html());
+				// });
+
+				//SELECTEAZA DOAR RANDURILE IMPARE DIN TABELE (1, 3, 5...)
+				//$('tr:odd').css('background-color', 'green');
+	
+				//SELECTEAZA DOAR RANDURILE PARE DIN TABELE (0, 2, 4...)
+				//$('tr:even').css('background-color', 'green');
+
+				//SELECTEAZA DOAR RANDURILE IMPARE DIN TABELUL table_1
+				//$('#table_1 tr:odd').css('background-color', 'green');
+
+				//SELECTEAZA PRIMUL COPIL <tr> DIN FIECARE TABEL
+				//$('tr:first-child').css('background-color', 'green');
+
+				//SELECTEAZA DIV-URILE CARE AU UN TITLE CARE SE INCEPE CU "First"
+				// var divs = $('div[title ^= "First"]');
+				// alert("No of divs that have a 'title' attribute and its value starts with 'First' --- " + divs.length);
+
+				//SELECTEAZA DIV-URILE CARE CONTIN ATRIBUTUL "title" SI ACESTA CONTINE VALOAREA "randoom"
+				// var divs = $('div[title *= "randoom"]');
+				// alert("No of divs found that have a 'title' attribute and its value contains the text 'randoom' --- " + divs.length);
+
+				//SELECTEAZA DIV-URILE CARE AU UN ATRIBUT "title" SI VALOAREA ACESTUI ATRIBUT SE TERMINA CU "name"
+				//var divs = $('div[title $= "name"]');
+				// alert("No of divs found that have a 'title' attribute and its value ends with 'name' --- " + divs.length);
 				
-
-
-
-
-
-
-
-
-
-
-
-
+				//SELECTEAZA DIV-URILE CARE AU UN ATRIBUT "title" A CARUI VALOARE SE TERMINA CU "name" SI APOI ITEREAZA PRIN REZULTATE SI MODIFICA CONTINUTUL HTML AL ACELOR TAG-URI
+				// var divs = $('div[title $= "name"]');
+				// divs.each(function(){
+				// 	$(this).html("Text added with jQuery");
+				// });
 
 
 			});
@@ -150,10 +172,13 @@
 		<![endif]-->
 	</head>
 	<body>
-		<div id="div_1">
+		<div id="div_1" title="First Div randoom name">
 			My div_1 content
 		</div>
-		<table>
+		<div id="div_2" title="Second Div randoom name">
+			My div_2 content
+		</div>
+		<table id="table_1">
 			<tr>
 				<td>Cell row 1</td>
 			</tr>
@@ -174,12 +199,12 @@
 			</tr>
 		</table>
 
-		<div class="RedDiv" title="RedDivTitle">
-			<span>Red div</span>
+		<div class="RedDiv" title="Red Div Title">
+			<span>Red Div content</span>
 		</div>
 
 		<div class="BlueDiv">
-			<span>Blue Div</span>
+			<span>Blue Div content</span>
 		</div>
 
 		<span class="RedDiv">Span with the class of RedDiv</span>
@@ -190,7 +215,7 @@
 
 		<div>
 			<form id="myForm" action="">
-				<table stylesheet="width: 300px">
+				<table stylesheet="width: 300px" id="table_form">
 					<tr>
 						<td style="width: 30%">First name:</td>
 						<td><input type="text" id="firstNameTextBox" value="John"></input></td>
