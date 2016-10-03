@@ -20,9 +20,76 @@
 
 		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 
-		<script type="text/javascript">
+		<script type="text/javascript">			
 			$(document).ready(function(){
 				
+				//=====================================================================================
+				//INTERACTING WITH DOM
+				//=====================================================================================
+
+
+				//Selecteaza elementele div care au clasele RedDiv si BlueDiv si le pune continutul HTML intr-un div cu ID-ul outputDiv.
+				// var html = '';
+				// $('div.RedDiv, div.BlueDiv').each(function(index){
+				// 	 html += '<br/>' + index + ' ' + $(this).html();
+				// });
+				// $('#outputDiv').html(html);
+
+
+				//SELECTEAZA DIV-URILE CARE AU CLASELE RedDiv si BlueDiv, ITEREAZA PRIN COLECTIA DE REZULTATE FOLOSIND FUNCTIA "each()" SI SETEAZA PROPRIETATEA "title" A FIECARUI ELEMENT GASIT
+				//INTAI SETEAZA PROPRIETATEA DIRECT FOLOSIND OBIECT-UL RAW "this" FARA SA II FACA WRAP IN "$( )"
+				//APOI MODIFICA ATRIBUTUL "title" FOLOSIND FUNCTIA "attr()" CARE ESTE DISPONIBILA DOAR DUPA CE FACEM WRAP LA OBIECTUL "this" IN "$( )" PENTRU A-L TRANSFORMA INTR-UN OBJIECT JQUERY
+				// $('div.RedDiv, div.BlueDiv').each(function(){
+				// 	this.title = 'Some title';
+				// 	//alert(this.title);
+
+				// 	$(this).attr('title', 'Some title 2');	
+				// });
+
+
+				//SELECTEAZA DIV-URILE CARE AU CLASELE SPECIFICATE SI SETEAZA ATRIBUTUL 'title' PENTRU FIECARE ELEMENT SELECTAT FOLOSIND FUNCTIA "attr()" INSA FARA FUNCTIA "each()" 
+				//$('div.RedDiv, div.BlueDiv').attr('title', 'Some title 3');
+
+
+				//MODIFICAREA MAI MULTOR ATRIBUTE
+				//SELECTEAZA DIV-URILE CARE AU CLASELE SPECIFICATE SI SETEAZA ATRIBUTELE "title" si "styele" PENTRU FIECARE ELEMENT DIN COLECTIA DE REZULTATE 
+				//PENTRU A MODIFICA MAI MULTE ATRIBUTE DAM FUNCTIEI "attr()" CA PARAMETRU UN OBIECT JSON
+				// $('div.RedDiv, div.BlueDiv').attr({
+
+				// 	title:'Some title 4',
+				// 	style:'background-color: yellow; color: black'
+				// });
+
+
+				//FUNCTION CHAINING
+				//SE SELECTEA DIV-URILE CARE AU CLASELE SPECIFICATE SI SE SETEAZA ATTRIBUTUL "title" FOLOSIND FUNCTIA "attr()" DUPA CARE SE INLANTUIESC SI ALTE APELURI DE FUNCTII "css()" CARE SETEAZA DIFERITE VALORI
+				//FACE SELECT-UL O SINGURA DATA SI RULEAZA TOATE ACESTE FUNCTII PE COLECTIA DE REZULTATE
+				// $('div.RedDiv, div.BlueDiv')
+				// 	.attr(
+				// 			{
+				// 				//TREBUIE AVUT GRIJA CA ATUNCI CAND FOLOSIM JSON SA NU PUNEM NUMELE ELEMENTULUI INTRE ' ' 
+				// 				title,'Some title 5'
+				// 			}
+				// 	)
+				// 	.css('background-color', 'green')
+				// 	.css('font-size', '20 px')
+				// 	.css('color', 'blue');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			});
 		</script>
 
@@ -34,6 +101,7 @@
 		<![endif]-->
 	</head>
 	<body>
+		<div id="outputDiv"></div>
 		<div id="div_1" title="First Div randoom name">
 			My div_1 content
 		</div>
