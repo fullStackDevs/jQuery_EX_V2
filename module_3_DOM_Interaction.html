@@ -10,11 +10,11 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<style type="text/css">
 			.RedDiv {
-				/*background-color: red;*/
+				background-color: #ffb3b3;
 			}
 
 			.BlueDiv {
-				/*background-color: blue;*/
+				background-color: #b3d1ff;
 			}
 		</style>
 
@@ -76,12 +76,46 @@
 				// 	.css('color', 'blue');
 
 
+				//MODIFICAREA DOM-ULUI
+
+				//ADAUGAREA DE ELEMENTE NOI IN DOM
+				//ADAUGA UN COPIL NOU DUPA COPII EXISTENTI IN ELEMENT-UL SELECTAT
+				// var tcd = $('#TableContainerDiv')
+				// tcd.append('<span style="background-color: green">Appended child 1</span>');
+				//ADAUGAREA UNUI COPIL NOU DUPA COPII EXISTENTI FOLOSIND "appendTo"
+				//$('<br/><span style="background-color: green">Appended child 2</span>').appendTo(tcd);
+				//ADAUGA UN COPIL NOU INAINTEA COPIILOR EXISTENTI IN ELEMENTUL SELECTAT
+				//tcd.prepend('<br/><span style="background-color: green">Prepended child 1</span>');
+				//ADAUGA UN COPIL INAINTEA CELOE EXISTENTI IN ELEMENTUL SELECTAT FOLOSIND "prependTo"
+				//$('<span style="background-color: green">Prepended child 2</span>').prependTo(tcd);
 
 
+				//WRAPPING NODES
+				//CODUL DE MAI JOS ESTE INFASURAT IN JURUL FIECARUI ELEMENT SPAN CARE ARE CLASA "Foo", NU ESTE PUS UN SINGUR DIV IN JURUL GRUPULUI DE SPAN-URI CARE AU CLASA SPECIFICATA
+				//$('span.Foo').wrap('<div class="RedDiv ParentWrapper" />');
+
+				//ITEREAZA PRIN TOTI COPII DIV-ULUI CARE ARE CLASA "ParentWrapper" SI AFISEAZA CONTINUTUL HTML AL FIECARUI COPIL
+				// $('div.ParentWrapper').each(function(){
+				// 	alert($(this).html());						
+				// });
+
+				//STERGEREA NODURILOR
+				//SE FACE CU FUNCTIA ".remove()"
+				//STERGE SI COPII NODULUI CARE ESTE ELIMINAT 
+				//$('div.ParentWrapper').remove();
 
 
+				//MODIFICAREA STILURILOR
+				//SE FOLOSESTE FUNCTIA ".css()"
+				//MODIFICA STILURILE APLICATE DIV-URILOR CARE AU CLASELE ".RedDiv" si ".BlueDiv"
+				$('div.RedDiv, div.BlueDiv').css({
+					'background-color': 'purple',
+					'color': 'white',
+					'font-size': '20 px'
+				});
 
 
+				
 
 
 
@@ -133,17 +167,20 @@
 			<span>Red Div content</span>
 		</div>
 
+		<span class="Foo">Span 1</span>
+		<span class="Foo">Span 2</span>
+		<span class="Foo">Span 3</span>
+
 		<div class="BlueDiv">
 			<span>Blue Div content</span>
 		</div>
-
 		<span class="RedDiv">Span with the class of RedDiv</span>
 
 		<div title="jQuery picture">
 			<img alt="random_img" src="./images/jQuery_img.png">
 		</div>
 
-		<div>
+		<div id="TableContainerDiv">
 			<form id="myForm" action="">
 				<table stylesheet="width: 300px" id="table_form">
 					<tr>
