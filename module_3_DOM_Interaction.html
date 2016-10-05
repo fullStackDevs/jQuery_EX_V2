@@ -37,8 +37,8 @@
 
 
 				//SELECTEAZA DIV-URILE CARE AU CLASELE RedDiv si BlueDiv, ITEREAZA PRIN COLECTIA DE REZULTATE FOLOSIND FUNCTIA "each()" SI SETEAZA PROPRIETATEA "title" A FIECARUI ELEMENT GASIT
-				//INTAI SETEAZA PROPRIETATEA DIRECT FOLOSIND OBIECT-UL RAW "this" FARA SA II FACA WRAP IN "$( )"
-				//APOI MODIFICA ATRIBUTUL "title" FOLOSIND FUNCTIA "attr()" CARE ESTE DISPONIBILA DOAR DUPA CE FACEM WRAP LA OBIECTUL "this" IN "$( )" PENTRU A-L TRANSFORMA INTR-UN OBJIECT JQUERY
+				//*** INTAI SETEAZA PROPRIETATEA DIRECT FOLOSIND OBIECT-UL RAW "this" FARA SA II FACA WRAP IN "$( )"
+				//*** APOI MODIFICA ATRIBUTUL "title" FOLOSIND FUNCTIA "attr()" CARE ESTE DISPONIBILA DOAR DUPA CE FACEM WRAP LA OBIECTUL "this" IN "$( )" PENTRU A-L TRANSFORMA INTR-UN OBJIECT JQUERY
 				// $('div.RedDiv, div.BlueDiv').each(function(){
 				// 	this.title = 'Some title';
 				// 	//alert(this.title);
@@ -68,7 +68,7 @@
 				// 	.attr(
 				// 			{
 				// 				//TREBUIE AVUT GRIJA CA ATUNCI CAND FOLOSIM JSON SA NU PUNEM NUMELE ELEMENTULUI INTRE ' ' 
-				// 				title,'Some title 5'
+				// 				title: 'Some title 5'
 				// 			}
 				// 	)
 				// 	.css('background-color', 'green')
@@ -82,10 +82,13 @@
 				//ADAUGA UN COPIL NOU DUPA COPII EXISTENTI IN ELEMENT-UL SELECTAT
 				// var tcd = $('#TableContainerDiv')
 				// tcd.append('<span style="background-color: green">Appended child 1</span>');
+			
 				//ADAUGAREA UNUI COPIL NOU DUPA COPII EXISTENTI FOLOSIND "appendTo"
 				//$('<br/><span style="background-color: green">Appended child 2</span>').appendTo(tcd);
+				
 				//ADAUGA UN COPIL NOU INAINTEA COPIILOR EXISTENTI IN ELEMENTUL SELECTAT
 				//tcd.prepend('<br/><span style="background-color: green">Prepended child 1</span>');
+			
 				//ADAUGA UN COPIL INAINTEA CELOE EXISTENTI IN ELEMENTUL SELECTAT FOLOSIND "prependTo"
 				//$('<span style="background-color: green">Prepended child 2</span>').prependTo(tcd);
 
@@ -108,14 +111,14 @@
 				//MODIFICAREA STILURILOR
 				//SE FOLOSESTE FUNCTIA ".css()"
 				//MODIFICA STILURILE APLICATE DIV-URILOR CARE AU CLASELE ".RedDiv" si ".BlueDiv"
-				$('div.RedDiv, div.BlueDiv').css({
-					'background-color': 'purple',
-					'color': 'white',
-					'font-size': '20 px'
-				});
-
+				// $('div.RedDiv, div.BlueDiv').css({
+				// 	'background-color': 'purple',
+				// 	'color': 'white',
+				// 	'font-size': '20 px'
+				// });
 
 				
+
 
 
 
