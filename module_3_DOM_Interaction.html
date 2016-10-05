@@ -16,6 +16,10 @@
 			.BlueDiv {
 				background-color: #b3d1ff;
 			}
+
+			.Highlight {
+				background-color: yellow;
+			}
 		</style>
 
 		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
@@ -118,16 +122,33 @@
 				// });
 
 				
+				//ADAUGAREA UNEI CLASE ELEMENTULUI SELECTAT
+				//$('input[type="text"]').addClass('Highlight');
 
+				//ELIMINAREA UNEI CLASE DIN ELEMENTUL SELECTAT
+				//$('#firstNameTextBox').removeClass('Highlight');
 
+				//ELIMINAREA TUTUROR CLASELOR DIN ELEMENTUL SELECTAT
+				//$('#firstNameTextBox').removeClass();
 
-
-
-
+				//VERIFICA DACA ELEMENTUL SELECTAT ARE CLASA DATA CA PARAMETRU
+				// if($('#lastNameTextBox').hasClass('Highlight')){
+				// 	alert('The text field lastNameTextBox has the class Highlight');
+				// }
 
 
 
 			});
+
+				
+				//*** FUNCTIA TREBUIE PUSA IANFARA FUNCTIEI $(document).ready(function(){.......})
+				//FACE TOGGLE LA CLASA HIGHLIGHT PENTRU INPUTFIELD-URILE firstNameTextBox SI lastNameTextBox
+				// function toggleFocusBlur(inputField){
+				// 	$(inputField).toggleClass('Highlight');
+				// }
+
+
+
 		</script>
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -188,11 +209,11 @@
 				<table stylesheet="width: 300px" id="table_form">
 					<tr>
 						<td style="width: 30%">First name:</td>
-						<td><input type="text" id="firstNameTextBox" value="John"></input></td>
+						<td><input type="text" id="firstNameTextBox" value="John" onfocus="toggleFocusBlur(this)" onblur="toggleFocusBlur(this)"></input></td>
 					</tr>
 					<tr>
  						<td style="width: 30%"></td>
- 						<td style="width: 70%"><input type="text" id="lastNameTextBox"></input></td>
+ 						<td style="width: 70%"><input type="text" id="lastNameTextBox" onfocus="toggleFocusBlur(this)" onblur="toggleFocusBlur(this)"></input></td>
 					</tr>
 					<tr>
 						<td>Commnets:</td>
