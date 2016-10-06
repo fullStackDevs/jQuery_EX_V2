@@ -33,10 +33,10 @@
 			});
 
 			function wireEvents(){
-				$('#submitButton').click(function(){
-					//alert('Clicked Button');
-					$('#inputContentDiv').text($('#firstNameTextBox').val() + ' ' + $('#lastNameTextBox').val());
-				});
+				// $('#submitButton').click(function(){
+				// 	//alert('Clicked Button');
+				// 	$('#inputContentDiv').text($('#firstNameTextBox').val() + ' ' + $('#lastNameTextBox').val());
+				// });
 
 
 				//SELECT DROPDOWN ITEM --- CHANGE EVENT
@@ -59,22 +59,37 @@
 				//CAND SE AJUNGE CU MOUSE-UL DEASUPRA ELEMENTULUI RESPECTIV, BACKGROUND-UL SE SCHIMBA IN GALBEN SI CURSORUL MOUSE-ULUI SE MODIFICA DIN SAGEATA IN FORMA UNEI MAINI
 				//CAND MOUSE-UL PARASESTE ELEMENTUL RESPECTIV TOTUL REVINE LA FORMA INITIALA
 				//CAND SE DA CLICK SI SE DA DRUMUL LA BUTONUL MOUSE-ULUI (MOUSEUP) PE ELEMENT-UL RESPECTIV VA FI AFISAT IN INTERIORUL ACELUI ELEMENT UN TEXT CU POZITIA DE PE ECRAN UNDE S-A DAT CLICK		
-				$('#myDiv, tr').mouseenter(function(){
-					toggleHighlight(this);
-					$(this).css('cursor','pointer');
-				})
-				.mouseleave(function(){
-					toggleHighlight(this);
-				})
-				.mouseup(function(e){
-					$(this).text('pageX= ' + e.pageX + ' ' + 'pageY = ' + e.pageY);
-					//*** "e.target" SI "this" REPREZINTA OBIECTE RAW JAVASCRIPT SI NU PUTEM ACCESA METODELE jQuery PE ELE DECAT DACA LE FACEM WRAP IN "$( )"
-					alert($(e.target).attr('id'));
-				});
+				// $('#myDiv, tr').mouseenter(function(){
+				// 	toggleHighlight(this);
+				// 	$(this).css('cursor','pointer');
+				// })
+				// .mouseleave(function(){
+				// 	toggleHighlight(this);
+				// })
+				// .mouseup(function(e){
+				// 	$(this).text('pageX= ' + e.pageX + ' ' + 'pageY = ' + e.pageY);
+				// 	//*** "e.target" SI "this" REPREZINTA OBIECTE RAW JAVASCRIPT SI NU PUTEM ACCESA METODELE jQuery PE ELE DECAT DACA LE FACEM WRAP IN "$( )"
+				// 	alert($(e.target).attr('id'));
+				// });
 				
-				function toggleHighlight(element){
-					$(element).toggleClass('Highlight');
-				}			
+				// function toggleHighlight(element){
+				// 	$(element).toggleClass('Highlight');
+				// }			
+
+
+				//ADAUGA UN HANDLER PENTRU EVENT-URILE 'mouseover mouseleave mouseup' 
+				//IN INTERIORUL HANDLER-ULUI SE TRATEAZA SEPARAT CODUL CARE SA FIE EXECUTAT LA 'mouseup'
+				// $('#myDiv').on('mouseenter mouseleave mouseup', function(e){
+				// 	$(this).toggleClass('Highlight');
+				// 	$(this).css('cursor', 'pointer');
+				// 	if(e.type == 'mouseup'){
+				// 		//$(this).text('pageX: ' + e.pageX + ' ' + 'pageY: ' + e.pageY);
+				// 		$(this).text('pageX= ' + e.pageX + ' ' + 'pageY = ' + e.pageY);
+				// 	}
+				// });
+
+				//ELIMINA HANDLAR-UL ADAUGAT ELEMENT-ULUI CU ID-UL "myDiv"
+				//$('#myDiv').off('mouseup');
 
 			}
 
