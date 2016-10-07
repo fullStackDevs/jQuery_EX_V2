@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Title Page</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+		<script type="text/javascript">
+
+			$(document).ready(function(){
+
+				//SETAREA EVENT-HANDLER FOLOSIND METODA CARE NU ESTE EFICIENTA IN CAZUL IN CARE SUNT MULTE ELEMENTE 
+				//SE SETEAZA CATE UN EVENT HANDLER PENTRU FIECARE ELEMENT "td" SI IN CAZUL IN CARE AVEM UN TABEL FOARTE MARE SE VA OCUPA MULTA MEMORIE CU TOATE EVENT HANDLERELE
+				// $('td').click(function(){
+				// 	alert($(this).text());				
+				// });
+
+
+				//ACELASI LUCRU DE MAI SUS FACUT CU FUNCTIA "on()" INSA ACEASTA VARIANTA DE FOLOSIRE A ACESTEI FUNCTII VA CREA DE ASEMENEA CATE UN EVENT HANDLER PENTRU FIECARE ELEMENT "td"
+				//ACEASTA VARIANTA DE A FOLOSI FUNCTIA "on()" PENTRU ELEMENTELE UNUI TABEL NU ESTE EFICIENTA
+				// $('td').on('click', function(){
+				// 	alert($(this).text());
+				// });
+
+
+				//VERSIUNEA MAI EFICIENTA A FUNCTIEI "on()" PENTRU ACEASTA SITUATIE (SETARE DE EVENT HANDLER PENTRU ELEMENTELE UNUI TABEL)
+				//CAND SE FACE CLICK PE UN ELEMENT  "td" DIN TABEL, EVENTUL SE VA RIDICA (BUBBLE UP) PANA LA ELEMENTUL "tbody" CARE ARE ASOCIAT EVENT HANDLER-UL DEFINIT DE NOI IN FUNCTIA "on()"
+				//CHIAR DACA NOI NU AVEM UN ELEMENT "tbody" IN TABEL, ACESTA VA FI ADAUGAT DE BROWSER SI EVENT HANDLER-UL VA FI LEGAT DE EL
+				// $('#myTable tbody').on('click', 'td', function(){
+				// 	alert($(this).text());
+				// });
+
+
+				//ADAUGAM UN RAND NOU IN TABEL LA FIECARE APASARE A BUTONULUI CU ID-UL "addRow"
+				// $('#addRow').on('click', function(){
+				// 	$('#myTable').append('<tr><td>John</td><td>Doe</td></tr>');
+				// });
+
+
+				//*** OPTIMIZAREA ULTIMELOR 2 EXEMPLE *** 
+				//PENTRU A EFICIENTIZA CELE 2 EXEMPLE DE MAI SUS CACH-UIM SELECT-UL PENTRU ELEMENT-UL CU ID-UL "myTable"
+				// var table = $('#myTable');
+
+				// table.find('tbody').on('click', 'td', function(){
+				// 	alert($(this).text());					
+				// });
+
+				// $('#addRow').on('click', function(){
+				// 	table.append('<tr><td>John</td><td>Doe</td></tr>');					
+				// });
+	
+
+				//*** O ALTA VARIANTA DE OPTIMIZARE ***
+				//PUTEM FACE CACHE SI LA SELECT-URI MAI SPECIFICE CUM AR FI: SELECTEAZA ELEMENTUL "tbody" CARE ARE CA PARINTE ELEMENT-UL CU ID-UL "myTable"
+				
+
+
+			});
+		</script>
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<h1 class="text-center">Clients list</h1>
+
+		<hr/>		
+
+		<div class="container">
+			<button id="addRow" class="btn btn-success">Add row</button>
+			<table id="myTable" class="table table-hover">
+				<thead>
+					<tr>
+						<th>First name</th>
+						<th>Last name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Ion</td>
+						<td>Popescu</td>
+					</tr>
+					<tr>
+						<td>Mihai</td>
+						<td>Teodorescu</td>
+					</tr>
+					<tr>
+						<td>Andrei</td>
+						<td>Matei</td>
+					</tr>
+					<tr>
+						<td>Ana</td>
+						<td>Moraru</td>
+					</tr>
+					<tr>
+						<td>Jessica</td>
+						<td>Fayer</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+ 		<script src="Hello World"></script>
+	</body>
+</html>
