@@ -45,7 +45,7 @@
 
 
 				//*** OPTIMIZAREA ULTIMELOR 2 EXEMPLE *** 
-				//PENTRU A EFICIENTIZA CELE 2 EXEMPLE DE MAI SUS CACH-UIM SELECT-UL PENTRU ELEMENT-UL CU ID-UL "myTable"
+				//PENTRU A EFICIENTIZA CELE 2 EXEMPLE DE MAI SUS CACHE-UIM SELECT-UL PENTRU ELEMENT-UL CU ID-UL "myTable"
 				// var table = $('#myTable');
 
 				// table.find('tbody').on('click', 'td', function(){
@@ -59,7 +59,16 @@
 
 				//*** O ALTA VARIANTA DE OPTIMIZARE ***
 				//PUTEM FACE CACHE SI LA SELECT-URI MAI SPECIFICE CUM AR FI: SELECTEAZA ELEMENTUL "tbody" CARE ARE CA PARINTE ELEMENT-UL CU ID-UL "myTable"
-				
+				var tbodyElem = $('#myTable tbody');
+
+				tbodyElem.on('click', 'td', function(){
+					alert($(this).text());
+				});
+
+
+				$('#addRow').on('click', function(){
+					tbodyElem.append('<tr><td>Irina</td><td>Garcia</td></tr>');
+				});
 
 
 			});
