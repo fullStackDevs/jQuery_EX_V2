@@ -13,11 +13,27 @@
 		<script src="https://code.jquery.com/jquery.js"></script>
 
 		<script type="text/javascript">
-			$(document).ready(function(){
-				$("#MyButton").click(function(event) {
-					$("#OutputDiv").load("HelpDetails.html");
-				});
+
+				 $(document).ready(function(){
+				
+				//LA APASAREA PUTONULUI SPECIFICAT SE VA INCARCA IN ELEMENTUL CU ID-UL "MyButton" CONTINUTUL HTML RETURNAT DE PAGINA "helpDetails.html"		
+				// 	$("#MyButton").click(function(event) {
+				// 		$("#OutputDiv").load("http://HelpDetails.html");
+				// 	});
+			
+
+			
+				//FACE ACELASI LUCRU CA SI EXEMPLUL DE MAI SUS INSA VA INCLUDE DOAR O PORTIUNE DIN FISIERUL SPEDIFICAT IN FUNCTIA LOAD (DOAR BUCATA CARE ESTE SELECTATA DE SELECTORUL SPECIFICAT IN FUNCTIA LOAD)
+				// $("#MyButton").click(function(){
+				// 	$("#OutputDiv").load("HelpDetails.html #MainTOC");
+				// });
+
+				 
+
 			});
+
+
+
 		</script>
 
 	</head>
