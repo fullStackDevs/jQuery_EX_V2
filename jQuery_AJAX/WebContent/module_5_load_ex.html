@@ -17,18 +17,42 @@
 				 $(document).ready(function(){
 				
 				//LA APASAREA PUTONULUI SPECIFICAT SE VA INCARCA IN ELEMENTUL CU ID-UL "MyButton" CONTINUTUL HTML RETURNAT DE PAGINA "helpDetails.html"		
-				// 	$("#MyButton").click(function(event) {
-				// 		$("#OutputDiv").load("http://HelpDetails.html");
-				// 	});
-			
+					// $("#MyButton").click(function(event) {
+					// 	$("#OutputDiv").load("http://HelpDetails.html");
+					// });			
 
 			
 				//FACE ACELASI LUCRU CA SI EXEMPLUL DE MAI SUS INSA VA INCLUDE DOAR O PORTIUNE DIN FISIERUL SPEDIFICAT IN FUNCTIA LOAD (DOAR BUCATA CARE ESTE SELECTATA DE SELECTORUL SPECIFICAT IN FUNCTIA LOAD)
+				//*** FILTRAREA SE FACE DUPA CE SA FACE DOWNLOAD LA FISIERUL COMPLET
 				// $("#MyButton").click(function(){
 				// 	$("#OutputDiv").load("HelpDetails.html #MainTOC");
 				// });
 
-				 
+			
+				 //=================================================================================
+				 //EXEMPLU FUNCTIE LOAD CU PARAMETRU FUNCTIE DE CALLBACK
+				 //VOM INCERCA SA INCARCAM UN FISIER DE PE SERVER, IAR DACA NU IL GASIM SE VA APELA FUNCTIA DATA CA PARAMETRU FUNCTIEI LOAD
+				 // $("#MyButton").on("click", function(){
+				 // 	$("#OutputDiv").load("InexistingFile.html", function(resposne, status, xhr){
+				 // 		if(status == "error"){
+				 // 			alert("Error: " + xhr.statusText);
+				 // 		}
+				 // 	});
+				 // });
+
+
+				//===================================================================================
+				//IN EXEMPLUL URMATOR SE INCEARCA INCARCAREA UNEI PAGINI DE PE SERVER DAR SE TRIMITE SI UN PARAMETRU CATRE SERVER CAND SE FACE REQUEST-UL. SERVER-UL FACE PROCESARILE NECESARE SI TRIMITE RASPUNSUL HTML INAPOI LA CLIENT
+				$("#MyButton").click(function(){
+					$("#OutputDiv").load("http://localhost:8080/jQuery_AJAX/UsersList.jsp", {userCount:10});
+					//$("#OutputDiv").load("HelpDetails.html #MainTOC");
+				});
+
+
+
+
+
+
 
 			});
 
