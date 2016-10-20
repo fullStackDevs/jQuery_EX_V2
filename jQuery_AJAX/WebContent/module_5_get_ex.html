@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Title Page</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- jQuery -->
+		<script src="http://code.jquery.com/jquery.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				
+				//FOLOSIM METODA GET PENTRU A FACE ACEEASI OPERATIE PE CARE AM FACUT-O CU FUNCTIA LOAD (INCARCAM INTR-UN DIV CONTINUTUL PAGINII "HelpDetails.html" INSA DATELE SUNT PUSE IN DIV-UL "OutputDiv" CU AJUTORUL FUNCTIEI DE CALLBACK)
+				// $("#MyButton").click(function(){
+				// 	$.get("./HelpDetails.html", function(data){
+				// 		$("#OutputDiv").html(data);
+				// 	});
+
+				// });
+
+
+				//CODUL DE MAI JOS FACE UN APEL AJAX LA SERVLET-UL CARE ARE urlPattern-ul "CustomerJSON_Path" --- ADICA SERVLET-UL "CustomerJSON.java" (urlPattern-ul este setat la inceputul servlet-ului in adnotarea @WebServlet(...., urlPatterns = {....}))
+				//SERVLET-UL VA RETURNA UN OBIECT JSON SI A AFISA UN ALERT CU DATELE DIN ACEL OBIECT PRIMIT DE LA SERVER
+				// $("#MyButton").click(function(){
+				// 	$.get("CustomerJSON_Path", {id:5}, function(data){
+				// 		alert("id: " + data.id + " - " + "first name: " + data.FirstName + " - " + "last name: " + data.LastName);
+				// 	}, "json");
+				// });
+
+
+				//ACEST EXEMPLU FACE ACELASI LUCRU CA CEL DE MAI SUS (FACE UN APEL AJAX LA SERVER SI ADUCE NISTE DATAE IN FORMAT JSON) INSA ACEASTA FUNCTIE POATE ADUCE DOAR DATE JSON SI DIN ACEST MOTIV NU MAI TREBUIE SA SPECIFICAM AL 4-LEA PARAMETRU (TIPUL DE DATE) CA IN EXEMPLUL DE MAI SUS
+				// $("#MyButton").click(function(){
+				// 	$.getJSON("CustomerJSON_Path", {id:3}, function(data){
+				// 		alert("id: " + data.id + " - first Name: " + data.FirstName + " - last name: " + data.LastName);
+				// 	});
+				// });
+
+
+
+
+
+			});
+		</script>
+
+
+
+	</head>
+	<body>
+		<hr/>
+		<div class="container">
+			<button id="MyButton" class="btn btn-primary">Load content with AJAX</button>
+			<div id="OutputDiv"></div>
+		</div>
+		
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	
+	</body>
+</html>
