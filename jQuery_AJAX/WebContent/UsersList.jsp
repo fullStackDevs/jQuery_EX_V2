@@ -12,6 +12,8 @@
 		int userCount = 0;
 		if(userCountStr != null){
 			userCount = Integer.parseInt(userCountStr);
+		}else{
+			userCount = 4;
 		}
 		
 	%>

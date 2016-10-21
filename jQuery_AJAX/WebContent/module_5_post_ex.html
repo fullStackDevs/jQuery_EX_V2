@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Title Page</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<script src="http://code.jquery.com/jquery.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+				//ACEST EXEMPLU FOLOSESTE FUCNTIA "POST" PENTRU A FACE UN REQUEST LA SERVER. IN ACEST REQEST ESTE TRIMIS CATRE SERVER UN PARAMETRU (userCount) SI SE PRIMESC INAPOI DATE HTML. NU ESTE SPECIFICAT FORMATUL DATELOR INSA JQUERY ISI DA SINGUR SEAMA IN CE FORMAT SUNT DATELE
+				//DACA DORIM PUTEM SPECIFICA AL 4-LEA PARAMETRU CARE CONTINE FORMATUL DATELOR PRIMITE DE LA SERVER
+				// $("#MyButton").click(function(){
+				// 	$.post("./UsersList.jsp", {userCount:10}, function(data){
+				// 		$("#OutputDiv").html(data);
+				// 	});
+				// });
+
+
+				//EXEMPLUL DE MAI JOS FACE UN POST REQUEST LA SERVER, ACEST REQUEST FIIND TRATAT DE UN SERVLET CARE RETURNEAZA UN JSON. REZULTATUL PRIMIT ESTE APOI AFISAT IN DIV-UL "OutputDiv"
+				$("#MyButton").click(function(){
+					$.post("CustomerJSON_Path", {customerCount:15}, 
+						function(data){
+							//***PENTRU ATUNCI CAND PRIMIM UN ARRAY DE OBIECTE JSON DE LA SERVER CA RASPUNS LA REQUEST-UL FACUT
+							//CAND SUAM DATELE DIN FIECARE ELEMENT NU TREBUIE SA FACEM WRAP LA "this" IN "$()" DEOARECE NU TREBUIE SA APELAM FUNCTII jQuery
+							$(data).each(function(){
+								$("#OutputDiv").append("<br/>First name: " + this.FirstName + " -- Last name: " + this.LastName);
+							});
+
+							
+							//PENTRU SITUATIA IN CARE PRIMIM UN SINGUR OBIECT JSON INAPOI DE LA SERVER
+							//$("#OutputDiv").html("First name: " + data.FirstName + " " + "Last name: " + data.LastName);							
+
+						}, "json");
+
+					});
+				});
+
+
+				//*** SE POATE FACE REQUEST SI CATRE SERVICII WEB 
+				//***TREBUIE TESTAT
+
+
+		</script>
+	</head>
+	
+	<body>
+		<hr/>
+		<div class="container">
+			<button id="MyButton" class="btn btn-primary">Load content with AJAX</button>
+			<div id="OutputDiv"></div>
+		</div>
+		
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	
+	</body>
+</html>

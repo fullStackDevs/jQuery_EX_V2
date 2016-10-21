@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 /**
@@ -40,8 +41,28 @@ public class CustomerJSON extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		PrintWriter writer = response.getWriter();
+		int customerCount = 0;
+		String customerCount_str = request.getParameter("customerCount");
+		customerCount = (customerCount_str == null)?2:Integer.parseInt(customerCount_str);
+	
+		JSONObject cust = null;
+		JSONArray customers = new JSONArray();		
+		for(int i = 0; i < customerCount; i++){
+			cust = new JSONObject();
+			cust.put("FirstName", "John" + i);
+			cust.put("LastName", "Doe" + i);
+			customers.add(cust);
+		}		
+		writer.print(customers);
+		
+		//For a response with a single JSON object:
+//		JSONObject cust = new JSONObject();
+//		cust.put("FirstName", "John");
+//		cust.put("LastName", "Doe");		
+//		writer.print(cust);
+		
+		
 	}
 
 }
