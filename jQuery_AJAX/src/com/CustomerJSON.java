@@ -56,7 +56,8 @@ public class CustomerJSON extends HttpServlet {
 		}		
 		writer.print(customers);
 		
-		//For a response with a single JSON object:
+		//***For a response with a single JSON object:
+		
 //		JSONObject cust = new JSONObject();
 //		cust.put("FirstName", "John");
 //		cust.put("LastName", "Doe");		
