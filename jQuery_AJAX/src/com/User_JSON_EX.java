@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -34,6 +35,7 @@ public class User_JSON_EX extends HttpServlet {
 		JSONObject receivedUser = null;
 		User user = new User();
 		JSONObject responseJSONObj = null;
+		JSONArray responseJSONArray = new JSONArray();
 		JSONParser parser = new JSONParser();
 		try{
 			 receivedUser = (JSONObject) parser.parse(request.getParameter("cust"));
@@ -53,12 +55,24 @@ public class User_JSON_EX extends HttpServlet {
 			 responseJSONObj.put("status", true);
 			 responseJSONObj.put("message", "Customer inserted: " + user.getFirstName() + " " + user.getLastName());
 			 
+			 responseJSONArray.add(responseJSONObj);
+			 
+			 responseJSONObj = new JSONObject();
+			 responseJSONObj.put("ID", "999");
+			 responseJSONObj.put("status", true);
+			 responseJSONObj.put("message", "Second object from the responseJSONArray");
+			 
+			 responseJSONArray.add(responseJSONObj);
 			 
 		}catch(ParseException e){
 			e.printStackTrace();
 		};
 		
-		writer.print(responseJSONObj);
+		//RETURNEAZA UN SINGUR OBIECT JSON
+		//writer.print(responseJSONObj);
+		
+		//RETURNEAZA UN ARRAY DE OBIECTE JSON
+		writer.print(responseJSONArray);
 		
 	}
 
